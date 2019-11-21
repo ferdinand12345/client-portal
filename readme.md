@@ -12,3 +12,9 @@ cd /path/to/the-clone-directory/of/client-portal
 ```bash
 ./install.sh
 ```
+## Project Information
+Title | Description
+--- | ---
+Laravel Version | 5.8
+PHP Version | 7.2.18
+Database | SQLite
