@@ -31,7 +31,8 @@
 							</div>
 							<div class="form-group">
 								<label>Date of Birth <span class="text-danger">*</span></label>
-								<input class="form-control" type="date" name="DOB" placeholder="Date of Birth" required="required">
+								<input id="datepicker" width="270" class="form-control" type="date" name="DOB" value="" placeholder="Date of Birth" required="required">
+								<small class="form-text text-muted">Min. 2000-12-31</small>
 							</div>
 							<div class="form-group">
 								<label>Email Address <span class="text-danger">*</span></label>
@@ -40,10 +41,12 @@
 							<div class="form-group">
 								<label>Password <span class="text-danger">*</span></label>
 								<input class="form-control" type="password" name="PASSWORD" placeholder="Password" required="required" autocomplete="off">
+								<small class="form-text text-muted">Min. 6</small>
 							</div>
 							<div class="form-group">
 								<label>Password Conf <span class="text-danger">*</span></label>
 								<input class="form-control" type="password" name="PASSWORD_CONF" placeholder="Password Conf" required="required" autocomplete="off">
+								<small class="form-text text-muted">Min. 6</small>
 							</div>
 							<div class="form-group">
 								<label>Phone Number <span class="text-danger">*</span></label>
@@ -63,4 +66,16 @@
 			</div>
 		</div>
 	</div>
+@endsection
+@section( 'scripts' )
+	<script type="text/javascript">
+		$( document).ready( function() {
+			$( '#datepicker' ).datepicker( {
+				format: 'yyyy-mm-dd',
+				value: '2000-12-31',
+				maxDate: '2000-12-31',
+				uiLibrary: 'bootstrap'
+			} );
+		} );
+	</script>
 @endsection

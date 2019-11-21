@@ -72,13 +72,5 @@ class TaskTest extends TestCase {
 			->assertStatus( 200 );
 	}
 
-	public function test_login_process() {
-		$response = $this->followingRedirects()
-			->post( '/login', [
-				'EMAIL' => 'ferdshinodas@gmail.com',
-				'PASSWORD' => '123'
-			] )
-			->assertStatus( 200 );
-	}
 
 }

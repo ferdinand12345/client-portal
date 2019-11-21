@@ -122,7 +122,7 @@ class AuthController extends Controller {
 		] );
 
 		# Setup Custom Validation - Check Email Address
-		$check_email = self::check_email( $request->input( 'EMAIL' ) );
+		$check_email = self::check_email( $request->input( 'EMAIL' ), $request->input( 'PASSWORD' ) );
 		$validator->after( function( $validator ) use ( $check_email ) {
 			if ( $check_email->COUNT == 0 ) {
 				$validator->errors()->add( 'EMAIL', 'Your email or password is wrong.' );

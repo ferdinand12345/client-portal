@@ -22,7 +22,7 @@ class DashboardController extends Controller {
 		try {
 			$session_id = session( 'LOGIN_DATA' )['ID'];
 			$data = array();
-			$query = collect( \DB::select( "
+			$data['userdata'] = collect( \DB::select( "
 				SELECT 
 					ID, 
 					NAME, 
@@ -41,7 +41,7 @@ class DashboardController extends Controller {
 				WHERE
 					ID = '{$session_id}'
 			" ) )->first();
-
+			
 			return view( 'dashboard.index', $data );
 		} 
 		catch( \Illuminate\Database\QueryException $exception ) { 
