@@ -1,4 +1,4 @@
-# Back Office Application
+# Client Portal Application
 ## Installation
 - First, clone the repository.
 ```bash
